@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập và tính điểm trung bình</title>
+</head>
+<body>
+<h1> Bài 1:Nhập điểm môn học</h1>
+<table>
+ <tr>
+
+<td style="width: 150px"><label for="vatly">Vật lý</label></td>
+     <td><input id="vatly" name="vatly" type="text"></td>
+ </tr>
+
+<tr>
+   <td> <label for="sinhhoc">Sinh học</label></td>
+    <td><input id="sinhhoc" name="sinhhoc" type="text"></td>
+</tr>
+    <tr>
+   <td> <label for="HoaHoc">Hóa Học</label></td>
+    <td><input id="HoaHoc" name="HoaHoc" type="text"></td>
+    </tr>
+    <tr>
+        <td>
+            Tổng Điểm:
+        </td>
+        <td>
+            <input id="tong" name="tong" type="text">
+        </td>
+    </tr>
+<tr>
+    <td>
+        Điểm Trung bình:
+    </td>
+    <td>
+    <input id="diemtb" name="diemtb" type="text">
+    </td>
+</tr>
+
+
+</table>
+<br>
+<button onclick="tinhtb()"> Tính Toán </button>
+<button onclick="xoa1()"> Xóa </button>
+<hr>
+<!---->
+<h1>Bài 2: Chuyển đổi độ C thành Độ F</h1>
+
+<table>
+    <tr>
+
+        <td style="width: 150px"><label for="doC">Độ C</label></td>
+        <td><input id="doC" name="doC" type="text"></td>
+    </tr>
+    <tr>
+        <td style="width: 150px"><label for="doF">Độ F</label></td>
+        <td><input id="doF" name="doF" type="text"></td>
+    </tr>
+</table>
+<br>
+<button onclick="tinhdoF()"> Tính Độ F </button>
+<hr>
+<h1>Bài 3: Tính diện tích hình tròn</h1>
+<table>
+    <tr>
+        <td style="width: 150px"><label for="R">Bán Kính (R)</label></td>
+        <td><input id="R" name="bankinh" type="text"></td>
+    </tr>
+    <tr>
+        <td style="width: 150px"><label for="S">Diện tích hình tròn là</label></td>
+        <td><input id="S" name="dientich" type="text"></td>
+    </tr>
+</table>
+<br>
+<button onclick="tinhdientich()"> Tính Diện Tích </button>
+<!---->
+<hr>
+<h1>Bài 4: Tính chu vi hình tròn</h1>
+<table>
+    <tr>
+        <td style="width: 150px"><label for="Rv">Bán Kính (R)</label></td>
+        <td><input id="Rv" name="bankinh" type="text"></td>
+    </tr>
+    <tr>
+        <td style="width: 150px"><label for="Sv">Diện tích hình tròn là</label></td>
+        <td><input id="Sv" name="dientich" type="text"></td>
+    </tr>
+</table>
+<br>
+<button onclick="chuvihinhtron()"> Tính Diện Tích </button>
+<script>
+    function tinhtb(){
+        let vl=parseFloat(document.getElementById("vatly").value);
+        let hh=parseFloat(document.getElementById("HoaHoc").value);
+        let sh=parseFloat(document.getElementById("sinhhoc").value);
+        let to=(vl+hh+sh);
+        let dtb=(vl+hh+sh)/3;
+        document.getElementById('diemtb').value = dtb;
+        document.getElementById('tong').value = to;
+    }
+    function xoa1(){
+        document.getElementById('vatly').value=""
+        document.getElementById('sinhhoc').value=""
+        document.getElementById('HoaHoc').value=""
+        document.getElementById('diemtb').value=""
+        document.getElementById('tong').value=""
+    }
+    function tinhdoF() {
+        let a=parseFloat(document.getElementById("doC").value);
+        let b=(9*a/5)+32;
+        document.getElementById('doF').value=b;
+    }
+ function tinhdientich() {
+        let bk=parseFloat(document.getElementById("R").value);
+        let dt=bk*bk*Math.PI
+     document.getElementById("S").value=dt
+ }
+
+    function chuvihinhtron() {
+        let bankinh=parseFloat(document.getElementById("Rv").value);
+        let chuvi=2*bankinh*Math.PI
+        document.getElementById("Sv").value=chuvi
+    }
+</script>
+</body>
+</html>
